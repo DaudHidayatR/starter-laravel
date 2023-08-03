@@ -23,5 +23,12 @@ class UserSeeder extends Seeder
             'role' => 'admin',
             'password' => Hash::make('password'),
         ]);
+        User::factory()->create([
+            'name' => 'super admin',
+            'email' => 'superadmin@gmail.com',
+            'email_verified_at' => now(),
+            'role' => 'super admin',
+            'password' => Hash::make('password'),
+        ]);
     }
 }
