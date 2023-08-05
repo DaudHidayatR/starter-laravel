@@ -24,6 +24,9 @@ Route::middleware(['auth','verified'])->group(function (){
     Route::get('/baru', function () {
         return view('dashboards.baru');
     });
+    Route::get('/edit-profile', function () {
+        return view('dashboards.profile');
+    })->name('edit-profile');
 });
 
 
