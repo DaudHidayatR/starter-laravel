@@ -55,11 +55,56 @@
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
+
+                    </div>
+                    <div class="card">
+                        <form method="post" class="needs-validation" novalidate="" action="{{route('user-password.update')}}">
+                            @csrf
+                            @method('PUT')
+                            <div class="card-header">
+                                <h4>Edit Password</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+
+                                    <div class="form-group col-12">
+                                        <label for="current_password">Current Password</label>
+                                        <input id="current_password" type="password" class="form-control @error('current_password', 'updatePassword') is-invalid @enderror" name="current_password" tabindex="2" >
+                                        @error('current_password', 'updatePassword')
+                                        <div class="invalid-feedback">
+                                            {{$message}}
+                                        </div>
+                                        @enderror
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-6 col-12">
+                                        <label for="password">New Password</label>
+                                        <input id="password" type="password" class="form-control @error('password', 'updatePassword') is-invalid @enderror" name="password" tabindex="2" >
+                                        @error('password', 'updatePassword')
+                                        <div class="invalid-feedback">
+                                            {{$message}}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6 col-12">
+                                            <label for="password_confirmation">Confirm Password</label>
+                                            <input id="password_confirmation" type="password" class="form-control  @error('password_confirmation', 'updatePassword') is-invalid @enderror" name="password_confirmation" tabindex="2" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-right">
+                                <button class="btn btn-primary">Changes Password</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-7">
                     <div class="card">
-                        <form method="post" class="needs-validation" novalidate="">
+                        <form method="post" class="needs-validation" novalidate="" action="{{route('user-profile-information.update')}}">
+                            @csrf
+                            @method('PUT')
                             <div class="card-header">
                                 <h4>Edit Profile</h4>
                             </div>
@@ -67,29 +112,43 @@
                                 <div class="row">
                                     <div class="form-group col-md-6 col-12">
                                         <label>Name</label>
-                                        <input type="text" class="form-control" value="{{auth()->user()->name}}" required="">
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{auth()->user()->name}}" required="" name="name">
+                                        @error('name')
                                         <div class="invalid-feedback">
-                                            Please fill in the first name
+                                            {{$message}}
                                         </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-7 col-12">
                                         <label>Email</label>
-                                        <input type="email" class="form-control" value="{{auth()->user()->email}}" required="">
+                                        <input type="email" class="form-control @error('email','updateProfileInformation') is-invalid @enderror" value="{{auth()->user()->email}}" required="" name="email">
+                                        @error('email', 'updateProfileInformation')
                                         <div class="invalid-feedback">
-                                            Please fill in the email
+                                            {{$message}}
                                         </div>
+                                        @enderror
                                     </div>
                                     <div class="form-group col-md-5 col-12">
                                         <label>Phone</label>
-                                        <input type="tel" class="form-control" value="{{auth()->user()->phone}}">
+                                        <input type="tel" class="form-control @error('phone','updateProfileInformation') is-invalid @enderror" value="{{auth()->user()->phone}}" name="phone">
+                                        @error('phone', 'updateProfileInformation')
+                                        <div class="invalid-feedback">
+                                            {{$message}}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-12">
                                         <label>Bio</label>
-                                        <textarea class="form-control summernote-simple">{{auth()->user()->bio}}</textarea>
+                                        <textarea class="form-control summernote-simple @error('bio', 'updateProfileInformation') is-invalid @enderror" name="bio">{{auth()->user()->bio}}</textarea>
+                                        @error('bio')
+                                        <div class="invalid-feedback">
+                                            {{$message}}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row">

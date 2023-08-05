@@ -10,6 +10,7 @@ use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
+
     /**
      * Validate and update the given user's profile information.
      *
@@ -17,6 +18,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
      */
     public function update(User $user, array $input): void
     {
+//        dd($input);
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
 
@@ -27,6 +29,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'max:255',
                 Rule::unique('users')->ignore($user->id),
             ],
+            'phone' => ['nullable', 'numeric', 'digits_between:10,12' ],
+
         ])->validateWithBag('updateProfileInformation');
 
         if ($input['email'] !== $user->email &&
@@ -36,6 +40,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
+                'phone' => $input['phone'],
+                'bio' => $input['bio'],
             ])->save();
         }
     }
