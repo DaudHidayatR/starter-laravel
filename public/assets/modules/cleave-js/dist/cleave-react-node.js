@@ -1200,7 +1200,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 
 	        // User is trying to bind() an autobound method; we effectively will
-	        // ignore the value of "this" that the user is trying to use, so
+	        // ignore the value of "this" that the users is trying to use, so
 	        // let's warn.
 	        if (newThis !== component && newThis !== null) {
 	          if (process.env.NODE_ENV !== 'production') {
@@ -1690,7 +1690,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * 
+	 *
 	 */
 
 	function makeEmptyFunction(arg) {
@@ -2044,7 +2044,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // strip ()
 	        // e.g. US: 7161234567 returns (716) 123-4567
 	        result = result.replace(/[()]/g, '');
-	        // replace library delimiter with user customized delimiter
+	        // replace library delimiter with users customized delimiter
 	        result = result.replace(/[\s-]/g, owner.delimiter);
 
 	        return result;
@@ -2211,7 +2211,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // strip value by prefix length
 	    // for prefix: PRE
 	    // (PRE123, 3) -> 123
-	    // (PR123, 3) -> 23 this happens when user hits backspace in front of "PRE"
+	    // (PR123, 3) -> 23 this happens when users hits backspace in front of "PRE"
 	    getPrefixStrippedValue: function getPrefixStrippedValue(value, prefix, prefixLength) {
 	        if (value.slice(0, prefixLength) !== prefix) {
 	            var diffIndex = this.getFirstDiffIndex(prefix, value.slice(0, prefixLength));
@@ -2283,7 +2283,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // On Android chrome, the keyup and keydown events
 	    // always return key code 229 as a composition that
-	    // buffers the user’s keystrokes
+	    // buffers the users’s keystrokes
 	    // see https://github.com/nosir/cleave.js/issues/147
 	    isAndroidBackspaceKeydown: function isAndroidBackspaceKeydown(lastInputValue, currentInputValue) {
 	        if (!this.isAndroid() || !lastInputValue || !currentInputValue) {

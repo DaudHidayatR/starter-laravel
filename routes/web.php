@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,21 +22,10 @@ Route::middleware(['auth','verified'])->group(function (){
         return view('dashboards.home');
     })->name('home');;
 
-    Route::get('/baru', function () {
-        return view('dashboards.baru');
-    });
     Route::get('/edit-profile', function () {
         return view('dashboards.profile');
     })->name('edit-profile');
+
+    Route::resource('users',UserController::class);
 });
 
-
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
-Route::get('/forgot', function () {
-    return view('auth.forgot');
-})->name('forgot');
-Route::get('/reset', function () {
-    return view('auth.reset');
-})->name('reset');

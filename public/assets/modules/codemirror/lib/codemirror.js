@@ -7745,7 +7745,7 @@ function wrappingChanged(cm) {
 }
 
 // A CodeMirror instance represents an editor. This is the object
-// that user code is usually dealing with.
+// that users code is usually dealing with.
 
 function CodeMirror(place, options) {
   var this$1 = this;
@@ -9458,7 +9458,7 @@ TextareaInput.prototype.onContextMenu = function (e) {
     te.style.cssText = oldCSS
     if (ie && ie_version < 9) { display.scrollbars.setScrollTop(display.scroller.scrollTop = scrollPos) }
 
-    // Try to detect the user choosing select-all
+    // Try to detect the users choosing select-all
     if (te.selectionStart != null) {
       if (!ie || (ie && ie_version < 9)) { prepareSelectAllHack() }
       var i = 0, poll = function () {

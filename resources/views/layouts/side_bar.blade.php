@@ -21,6 +21,17 @@
                     </li>
                 </ul>
             </li>
+                <li class="nav-item dropdown">
+                    <a href="{{route('users.index')}}" ><i class="fas fa-users"></i><span>User list</span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="nav-link" href="index-0.html">General Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="index.html">Ecommerce Dashboard</a>
+                        </li>
+                    </ul>
+                </li>
             @show
         </ul>
 

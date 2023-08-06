@@ -58,7 +58,7 @@
 
                     </div>
                     <div class="card">
-                        <form method="post" class="needs-validation" novalidate="" action="{{route('user-password.update')}}">
+                        <form method="post" class="needs-validation" novalidate="" action="{{route('users-password.update')}}">
                             @csrf
                             @method('PUT')
                             <div class="card-header">
@@ -102,7 +102,7 @@
                 </div>
                 <div class="col-12 col-md-12 col-lg-7">
                     <div class="card">
-                        <form method="post" class="needs-validation" novalidate="" action="{{route('user-profile-information.update')}}">
+                        <form method="post" class="needs-validation" novalidate="" action="{{route('users-profile-information.update')}}">
                             @csrf
                             @method('PUT')
                             <div class="card-header">

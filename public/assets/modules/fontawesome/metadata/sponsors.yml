@@ -225,7 +225,7 @@ harvard-medical-school:
     - syringe
     - tablets
     - thermometer
-    - user-md
+    - users-md
     - vial
     - vials
     - weight
@@ -336,7 +336,7 @@ mrt:
   url: 'https://medrt.co.jp'
 mylogin-info:
   icons:
-    - user-shield
+    - users-shield
   label: mylogin.info
   url: 'https://www.mylogin.info'
 napster:
@@ -616,7 +616,7 @@ via:
     - house-damage
     - layer-group
     - skull-crossbones
-    - user-injured
+    - users-injured
   label: VIA Traffic Software Solutions
   url: 'https://www.via.software'
 victor-costan:

@@ -2077,7 +2077,7 @@ exportHooks.touchMouseIgnoreWait = 500;
 var globalEmitter = null;
 var neededCount = 0;
 /*
-Listens to document and window-level user-interaction events, like touch events and mouse events,
+Listens to document and window-level users-interaction events, like touch events and mouse events,
 and fires these events as-is to whoever is observing a GlobalEmitter.
 Best when used as a singleton via GlobalEmitter.get()
 
@@ -2369,10 +2369,10 @@ var HitDragListener = /** @class */ (function (_super) {
         this.hit = null;
         this.component.hitsNotNeeded();
     };
-    // Called when scrolling has stopped, whether through auto scroll, or the user scrolling
+    // Called when scrolling has stopped, whether through auto scroll, or the users scrolling
     HitDragListener.prototype.handleScrollEnd = function () {
         _super.prototype.handleScrollEnd.call(this);
-        // hits' absolute positions will be in new places after a user's scroll.
+        // hits' absolute positions will be in new places after a users's scroll.
         // HACK for recomputing.
         if (this.isDragging) {
             this.component.releaseHits();
@@ -3397,7 +3397,7 @@ var InteractiveDateComponent = /** @class */ (function (_super) {
     };
     // Event Drag-n-Drop
     // ---------------------------------------------------------------------------------------------------------------
-    // Computes if the given event is allowed to be dragged by the user
+    // Computes if the given event is allowed to be dragged by the users
     InteractiveDateComponent.prototype.isEventDefDraggable = function (eventDef) {
         return this.isEventDefStartEditable(eventDef);
     };
@@ -3428,7 +3428,7 @@ var InteractiveDateComponent = /** @class */ (function (_super) {
     InteractiveDateComponent.prototype.isEventDefResizableFromEnd = function (eventDef) {
         return this.isEventDefResizable(eventDef);
     };
-    // Computes if the given event is allowed to be resized by the user at all
+    // Computes if the given event is allowed to be resized by the users at all
     InteractiveDateComponent.prototype.isEventDefResizable = function (eventDef) {
         var isResizable = eventDef.isDurationExplicitlyEditable();
         if (isResizable == null) {
@@ -3515,7 +3515,7 @@ var View = /** @class */ (function (_super) {
     function View(calendar, viewSpec) {
         var _this = _super.call(this, null, viewSpec.options) || this;
         _this.batchRenderDepth = 0;
-        _this.isSelected = false; // boolean whether a range of time is user-selected or not
+        _this.isSelected = false; // boolean whether a range of time is users-selected or not
         _this.calendar = calendar;
         _this.viewSpec = viewSpec;
         // shortcuts
@@ -3875,7 +3875,7 @@ var View = /** @class */ (function (_super) {
         if (dateMutation) {
             eventInstance.dateProfile = dateMutation.buildNewDateProfile(eventInstance.dateProfile, this.calendar);
         }
-        this.triggerEventDrop(eventInstance, 
+        this.triggerEventDrop(eventInstance,
         // a drop doesn't necessarily mean a date mutation (ex: resource change)
         (dateMutation && dateMutation.dateDelta) || moment.duration(), undoFunc, el, ev);
     };
@@ -5600,7 +5600,7 @@ var CoordCache = /** @class */ (function () {
     };
     // Bounding Rect
     // TODO: decouple this from CoordCache
-    // Compute and return what the elements' bounding rectangle is, from the user's perspective.
+    // Compute and return what the elements' bounding rectangle is, from the users's perspective.
     // Right now, only returns a rectangle if constrained by an overflow:scroll element.
     // Returns null if there are no elements
     CoordCache.prototype.queryBoundingRect = function () {
@@ -5985,7 +5985,7 @@ var DragListener = /** @class */ (function () {
         }
     };
     DragListener.prototype.handleScrollEnd = function () {
-        // Called when scrolling has stopped, whether through auto scroll, or the user scrolling
+        // Called when scrolling has stopped, whether through auto scroll, or the users scrolling
     };
     return DragListener;
 }());
@@ -9623,7 +9623,7 @@ var Calendar = /** @class */ (function () {
     };
     // Destroys the view, including the view object. Then, re-instantiates it and renders it.
     // Maintains the same scroll state.
-    // TODO: maintain any other user-manipulated state.
+    // TODO: maintain any other users-manipulated state.
     Calendar.prototype.reinitView = function () {
         var oldView = this.view;
         var scroll = oldView.queryScroll(); // wouldn't be so complicated if Calendar owned the scroll
@@ -10735,7 +10735,7 @@ var EventResizing = /** @class */ (function (_super) {
                 .startInteraction(ev);
         }
     };
-    // Creates a listener that tracks the user as they resize an event segment.
+    // Creates a listener that tracks the users as they resize an event segment.
     // Generic enough to work with any type of Grid.
     EventResizing.prototype.buildDragListener = function (seg, isStart) {
         var _this = this;
@@ -10966,7 +10966,7 @@ var EventDragging = /** @class */ (function (_super) {
         });
         return dragListener;
     };
-    // Builds a listener that will track user-dragging on an event segment.
+    // Builds a listener that will track users-dragging on an event segment.
     // Generic enough to work with any type of Grid.
     // Has side effect of setting/unsetting `dragListener`
     EventDragging.prototype.buildDragListener = function (seg) {
@@ -11204,7 +11204,7 @@ var DateSelecting = /** @class */ (function (_super) {
         });
         util_1.preventSelection(el);
     };
-    // Creates a listener that tracks the user's drag across day elements, for day selecting.
+    // Creates a listener that tracks the users's drag across day elements, for day selecting.
     DateSelecting.prototype.buildDragListener = function () {
         var _this = this;
         var component = this.component;
@@ -11255,7 +11255,7 @@ var DateSelecting = /** @class */ (function (_super) {
     };
     // Given the first and last date-spans of a selection, returns another date-span object.
     // Subclasses can override and provide additional data in the span object. Will be passed to renderSelectionFootprint().
-    // Will return false if the selection is invalid and this should be indicated to the user.
+    // Will return false if the selection is invalid and this should be indicated to the users.
     // Will return null/undefined if a selection invalid but no error should be reported.
     DateSelecting.prototype.computeSelection = function (footprint0, footprint1) {
         var wholeFootprint = this.computeSelectionFootprint(footprint0, footprint1);
@@ -11457,7 +11457,7 @@ var AgendaView = /** @class */ (function (_super) {
     };
     /* Scroll
     ------------------------------------------------------------------------------------------------------------------*/
-    // Computes the initial pre-configured scroll state prior to allowing the user to change it
+    // Computes the initial pre-configured scroll state prior to allowing the users to change it
     AgendaView.prototype.computeInitialDateScroll = function () {
         var scrollTime = moment.duration(this.opt('scrollTime'));
         var top = this.timeGrid.computeTimeTop(scrollTime);
@@ -13593,7 +13593,7 @@ var MouseFollower = /** @class */ (function () {
             left: this.left0 + this.leftDelta
         });
     };
-    // Gets called when the user moves the mouse
+    // Gets called when the users moves the mouse
     MouseFollower.prototype.handleMove = function (ev) {
         this.topDelta = util_1.getEvY(ev) - this.y0;
         this.leftDelta = util_1.getEvX(ev) - this.x0;
@@ -13662,7 +13662,7 @@ var DateClicking = /** @class */ (function (_super) {
             }
         });
     };
-    // Creates a listener that tracks the user's drag across day elements, for day clicking.
+    // Creates a listener that tracks the users's drag across day elements, for day clicking.
     DateClicking.prototype.buildDragListener = function () {
         var _this = this;
         var component = this.component;
@@ -13673,7 +13673,7 @@ var DateClicking = /** @class */ (function (_super) {
                 dayClickHit = dragListener.origHit;
             },
             hitOver: function (hit, isOrig, origHit) {
-                // if user dragged to another cell at any point, it can no longer be a dayClick
+                // if users dragged to another cell at any point, it can no longer be a dayClick
                 if (!isOrig) {
                     dayClickHit = null;
                 }
@@ -14161,7 +14161,7 @@ var Popover = /** @class */ (function () {
             this.listenTo($(document), 'mousedown', this.documentMousedown);
         }
     };
-    // Triggered when the user clicks *anywhere* in the document, for the autoHide feature
+    // Triggered when the users clicks *anywhere* in the document, for the autoHide feature
     Popover.prototype.documentMousedown = function (ev) {
         // only hide the popover if the click happened outside the popover
         if (this.el && !$(ev.target).closest(this.el).length) {

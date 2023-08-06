@@ -378,7 +378,7 @@ code:
     - sitemap
     - stream
     - terminal
-    - user-secret
+    - users-secret
     - window-close
     - window-maximize
     - window-minimize
@@ -622,7 +622,7 @@ education:
     - school
     - shapes
     - theater-masks
-    - user-graduate
+    - users-graduate
   label: Education
 emoji:
   icons:
@@ -769,7 +769,7 @@ health:
     - plus-square
     - prescription
     - stethoscope
-    - user-md
+    - users-md
     - wheelchair
   label: Health
 images:
@@ -941,9 +941,9 @@ interfaces:
     - undo
     - undo-alt
     - upload
-    - user
-    - user-alt
-    - user-circle
+    - users
+    - users-alt
+    - users-circle
     - volume-down
     - volume-mute
     - volume-off
@@ -1163,7 +1163,7 @@ medical:
     - teeth-open
     - thermometer
     - tooth
-    - user-md
+    - users-md
     - vial
     - vials
     - weight
@@ -1609,10 +1609,10 @@ status:
     - toggle-on
     - unlock
     - unlock-alt
-    - user
-    - user-alt
-    - user-alt-slash
-    - user-slash
+    - users
+    - users-alt
+    - users-alt-slash
+    - users-slash
     - video
     - video-slash
     - volume-down
@@ -1679,29 +1679,29 @@ users-people:
     - power-off
     - smile
     - street-view
-    - user
-    - user-alt
-    - user-alt-slash
-    - user-astronaut
-    - user-check
-    - user-circle
-    - user-clock
-    - user-cog
-    - user-edit
-    - user-friends
-    - user-graduate
-    - user-injured
-    - user-lock
-    - user-md
-    - user-minus
-    - user-ninja
-    - user-plus
-    - user-secret
-    - user-shield
-    - user-slash
-    - user-tag
-    - user-tie
-    - user-times
+    - users
+    - users-alt
+    - users-alt-slash
+    - users-astronaut
+    - users-check
+    - users-circle
+    - users-clock
+    - users-cog
+    - users-edit
+    - users-friends
+    - users-graduate
+    - users-injured
+    - users-lock
+    - users-md
+    - users-minus
+    - users-ninja
+    - users-plus
+    - users-secret
+    - users-shield
+    - users-slash
+    - users-tag
+    - users-tie
+    - users-times
     - users
     - wheelchair
   label: Users & People

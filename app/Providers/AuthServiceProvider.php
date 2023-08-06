@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Gate;
 class AuthServiceProvider extends ServiceProvider
 {
     public static array $permissions = [
-        'dashboard' => ['super admin', 'admin','user'],
-        'index-user' => ['super admin'],
+        'dashboard' => ['super admin', 'admin','users'],
+        'index-users' => ['super admin'],
     ];
     /**
      * The model to policy mappings for the application.

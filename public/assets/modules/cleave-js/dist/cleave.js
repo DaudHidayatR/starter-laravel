@@ -401,7 +401,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 
 	        pps.backspace = false;
-	        
+
 	        owner.element.value = value;
 	        owner.onInput(value);
 	    },
@@ -494,7 +494,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    thousand: 'thousand',
 	    lakh:     'lakh',
 	    wan:      'wan',
-	    none:     'none'    
+	    none:     'none'
 	};
 
 	NumeralFormatter.prototype = {
@@ -787,7 +787,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // strip ()
 	        // e.g. US: 7161234567 returns (716) 123-4567
 	        result = result.replace(/[()]/g, '');
-	        // replace library delimiter with user customized delimiter
+	        // replace library delimiter with users customized delimiter
 	        result = result.replace(/[\s-]/g, owner.delimiter);
 
 	        return result;
@@ -849,7 +849,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        // starts with 50/56-58/6304/67; 16 digits
 	        maestro: /^(?:5[0678]\d{0,2}|6304|67\d{0,2})\d{0,12}/,
-	        
+
 	        // starts with 22; 16 digits
 	        mir: /^220[0-4]\d{0,12}/,
 
@@ -965,7 +965,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // strip value by prefix length
 	    // for prefix: PRE
 	    // (PRE123, 3) -> 123
-	    // (PR123, 3) -> 23 this happens when user hits backspace in front of "PRE"
+	    // (PR123, 3) -> 23 this happens when users hits backspace in front of "PRE"
 	    getPrefixStrippedValue: function (value, prefix, prefixLength) {
 	        if (value.slice(0, prefixLength) !== prefix) {
 	            var diffIndex = this.getFirstDiffIndex(prefix, value.slice(0, prefixLength));
@@ -1037,7 +1037,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // On Android chrome, the keyup and keydown events
 	    // always return key code 229 as a composition that
-	    // buffers the user’s keystrokes
+	    // buffers the users’s keystrokes
 	    // see https://github.com/nosir/cleave.js/issues/147
 	    isAndroidBackspaceKeydown: function (lastInputValue, currentInputValue) {
 	        if (!this.isAndroid() || !lastInputValue || !currentInputValue) {
