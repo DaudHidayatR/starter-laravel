@@ -21,11 +21,11 @@
                     </div>
                     <div class="card-body">
                         <div class="float-right">
-                            <form>
+                            <form method="GET" action="{{route('users.index')}}">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search">
+                                    <input name="search" type="text" class="form-control" placeholder="Search">
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                        <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                                     </div>
                                 </div>
                             </form>
@@ -43,7 +43,7 @@
                                     <th>Phone</th>
                                     <th>Status</th>
                                 </tr>
-                                @foreach($users as $user)
+                                @forelse($users as $user)
                                     <tr>
                                         <td>
                                             <div class="custom-checkbox custom-control">
@@ -70,14 +70,19 @@
 
                                         </td>
                                     </tr>
-                                @endforeach
+                                    @empty
+                                    <tr>
+                                        <td colspan="5" class="text-center p-5">
+                                            Data not found
+                                        </td>
+                                @endforelse
 
                             </table>
                         </div>
                         <div class="float-right">
                             <nav>
                                 <ul class="pagination">
-                                    {{$users->links()}}
+                                    {{$users->withQueryString()->links()}}
                                 </ul>
                             </nav>
                         </div>
