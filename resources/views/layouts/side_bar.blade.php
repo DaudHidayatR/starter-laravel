@@ -21,6 +21,7 @@
                     </li>
                 </ul>
             </li>
+            @can('index-user')
                 <li class="nav-item dropdown">
                     <a href="{{route('users.index')}}" ><i class="fas fa-users"></i><span>User list</span></a>
                     <ul class="dropdown-menu">
@@ -32,6 +33,7 @@
                         </li>
                     </ul>
                 </li>
+                @endcan
             @show
         </ul>
 
